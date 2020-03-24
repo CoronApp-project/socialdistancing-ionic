@@ -5,11 +5,18 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
+    "clean": "rimraf ./dist",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "build:prod": "ng build --prod",
+    "test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "test:watch": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:ci": "npm run clean && npm run test && npm run build:prod"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.9.0"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +58,10 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "@babel/compat-data": "7.8.0",
+    "@babel/preset-env": "7.8.0",
+    "babel-loader": "8.1.0"
   },
   "description": "An Ionic project"
 }
