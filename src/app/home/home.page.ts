@@ -14,12 +14,8 @@ export class HomePage implements OnInit {
       return;
     }
     promptEvent.prompt();
-    promptEvent.userChoice.then(result => {
-      console.log("👍", "userChoice", result);
-      // Reset the deferred prompt variable, since
-      // prompt() can only be called once.
+    promptEvent.userChoice.then(() => {
       (window as any).deferredPrompt = null;
-      // Hide the install button.
     });
   }
 

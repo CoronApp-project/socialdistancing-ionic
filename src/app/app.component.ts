@@ -20,11 +20,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("ngsw-worker.js")
-        .then(() => console.log("service worker has been installed"))
-        .catch(err => console.error("Error", err));
+      navigator.serviceWorker.register("ngsw-worker.js");
     }
+
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
       (window as any).deferredPrompt = e;
