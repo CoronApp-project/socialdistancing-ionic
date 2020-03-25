@@ -132,4 +132,4 @@ In the case of this example the port number would be 8080. After running this co
 
 ![ngrok output after running the ngrok http command line](https://user-images.githubusercontent.com/58298921/77493669-02add680-6e44-11ea-9cfa-aeb7563807b6.png)
 
-To properly test the application, you should take the last fowarwding url that starts with 'https' and open it in your mobile browser. The url's that are generated, expire as soon as you quit running ngrok in your terminal.
+To properly test the application, take the last fowarwding url that starts with 'https' and open it in your mobile browser.
