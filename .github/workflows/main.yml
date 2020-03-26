@@ -28,9 +28,7 @@ jobs:
         uses: actions/setup-node@v1
 
       - name: npm ci & npm run build
-        run: |
-          npm ci
-          npm run build:ci
+        run: npm run build:ci
   
   deploy:
     runs-on: ubuntu-latest
