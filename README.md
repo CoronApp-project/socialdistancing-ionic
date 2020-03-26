@@ -9,12 +9,10 @@ Gamification solution to promote Social Distancing.
 
 # Table of contents
 
-- [Social Distancing](#social-distancing)
-- [Table of contents](#table-of-contents)
 - [Installations](#installations)
   - [Clone the project](#clone-the-project)
-  - [Install the Ionic CLI](#install-the-ionic-cli)
-  - [Install the http-server package](#install-the-http-server-package)
+  - [Install the Ionic CLI](#Install-the-Ionic-CLI)
+  - [Install the http-server package](#Install-the-http-server-package)
   - [Install and set up ngrok](#install-and-set-up-ngrok)
 - [Local development environment for desktop](#local-development-environment-for-desktop)
   - [Ionic production build](#ionic-production-build)
@@ -136,4 +134,4 @@ In the case of this example the port number would be 8080. After running this co
 
 ![ngrok output after running the ngrok http command line](https://user-images.githubusercontent.com/58298921/77493669-02add680-6e44-11ea-9cfa-aeb7563807b6.png)
 
-To properly test the application, take the last fowarwding url that starts with 'https' and open it in your mobile browser.
+To properly test the application, take the last fowarwding url that starts with 'https' and open it in your mobile browser
