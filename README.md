@@ -96,11 +96,7 @@ Use the previously [installed http-server package](#Install-the-http-server-pack
 http-server -c-1 ./www
 ```
 
-The output should look something like the in image below:
-
-![Image of http-server command line to start up development server](https://user-images.githubusercontent.com/58298921/77488971-1737a200-6e37-11ea-938c-48198e70a43d.png)
-
-Navigate to the top URL in your browser to test the PWA. If the project does not properly reflect the changes made then you might have to [empty your browser's cache](#empty-browser-cache)
+Navigate to the response URL in your browser to test the PWA. If the project does not properly reflect the changes made then you might have to [empty your browser's cache](#empty-browser-cache)
 
 **_Alternatively you can also use the following command line in the project's root directory to run the above two steps successively:_**
 
