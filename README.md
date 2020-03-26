@@ -1,6 +1,6 @@
 # Social Distancing
 
-[![build status](https://github.com/guillermomartinez-accenture/socialdistancing-ionic/workflows/CI/badge.svg)](https://github.com/guillermomartinez-accenture/socialdistancing-ionic/actions)
+[![build status](https://github.com/guillermomartinez-accenture/socialdistancing-ionic/workflows/Pipeline/badge.svg)](https://github.com/guillermomartinez-accenture/socialdistancing-ionic/actions)
 
 Ionic Web app to increase awareness of Social Distancing in an easy manner.
 Make it more "tangible" and "visual".
@@ -9,10 +9,12 @@ Gamification solution to promote Social Distancing.
 
 # Table of contents
 
+- [Social Distancing](#social-distancing)
+- [Table of contents](#table-of-contents)
 - [Installations](#installations)
   - [Clone the project](#clone-the-project)
-  - [Install the Ionic CLI](#Install-the-Ionic-CLI)
-  - [Install the http-server package](#Install-the-http-server-package)
+  - [Install the Ionic CLI](#install-the-ionic-cli)
+  - [Install the http-server package](#install-the-http-server-package)
   - [Install and set up ngrok](#install-and-set-up-ngrok)
 - [Local development environment for desktop](#local-development-environment-for-desktop)
   - [Ionic production build](#ionic-production-build)
