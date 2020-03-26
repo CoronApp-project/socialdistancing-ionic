@@ -26,7 +26,7 @@ Gamification solution to promote Social Distancing.
 Clone the project into the desired directory:
 
 ```
-git clone https://github.com/guillermomartinez-accenture/socialdistancing-ionic.git
+git clone https://github.com/CoronApp-project/socialdistancing-ionic.git
 ```
 
 Then navigate into the directory of the cloned project using a terminal and install the dependencies:
