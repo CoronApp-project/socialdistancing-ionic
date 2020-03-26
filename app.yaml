@@ -1,5 +1,4 @@
 runtime: nodejs12
-application: coronapp-dev
 handlers:
   - url: /
     static_files: www/index.html
