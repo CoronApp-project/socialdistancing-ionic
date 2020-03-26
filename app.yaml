@@ -1,9 +1,7 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: nodejs8
 handlers:
-- url: /
-  static_files: www/index.html
-  upload: www/index.html
-- url: /
-  static_dir: www
+  - url: /
+    static_files: www/index.html
+    upload: www/index.html
+  - url: /
+    static_dir: www
