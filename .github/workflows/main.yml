@@ -41,11 +41,11 @@ jobs:
           export_default_credentials: true
 
       - name: deploy to dev
-        run: gcloud app deploy --version=dev
+        run: gcloud app deploy --version=dev --promote
 
       - name: deploy to prod
         if: github.ref == 'refs/heads/develop'
-        run: gcloud app deploy --version=prod
+        run: gcloud app deploy --version=prod --promote
 
       - name: pull-request to master
         if: github.ref == 'refs/heads/develop' && success()
