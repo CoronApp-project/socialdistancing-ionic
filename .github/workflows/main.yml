@@ -31,17 +31,37 @@ jobs:
         run: |
           npm ci
           npm run build:ci
-  
+
+      - name: upload www output
+        uses: actions/upload-artifact@v1
+        with:
+          name: www
+          path: www
+
+      - name: upload App Engine file
+        uses: actions/upload-artifact@v1
+        with:
+          name: app_engine_file
+          path: app.yaml
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - uses: actions/checkout@v2
+      - name: download www build directory
+        uses: actions/download-artifact@v1
+        with:
+          name: www
+
+      - name: download App Engine file
+        uses: actions/download-artifact@v1
+        with:
+          name: app_engine_file
 
       - name: login gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '286.0.0'
+          version: "286.0.0"
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
