@@ -1,6 +1,10 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - "*"
+      - "*/*"
 
 jobs:
   build:
@@ -45,11 +49,10 @@ jobs:
           export_default_credentials: true
 
       - name: deploy to dev
-        if: contains(github.ref, "feature/*")
         run: |
           gcloud app deploy --version=dev
 
       - name: deploy to prod
-        if: contains(github.ref, "develop")
+        if: github.ref == 'refs/heads/develop'
         run: |
           gcloud app deploy --version=prod
