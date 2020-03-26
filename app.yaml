@@ -1,4 +1,4 @@
-runtime: nodejs8
+runtime: nodejs12
 handlers:
   - url: /
     static_files: www/index.html
