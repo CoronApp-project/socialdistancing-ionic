@@ -38,6 +38,10 @@ jobs:
     needs: [build]
     steps:
 
+      - name: test
+        run: |
+          ls
+        
       - uses: actions/checkout@v2
 
       - name: login gcloud
@@ -50,6 +54,7 @@ jobs:
 
       - name: deploy to dev
         run: |
+          ls
           gcloud app deploy --version=dev
 
       - name: deploy to prod
