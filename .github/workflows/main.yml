@@ -41,7 +41,7 @@ jobs:
       - name: upload App Engine file
         uses: actions/upload-artifact@v1
         with:
-          name: app_engine_file
+          name: app.yaml
           path: app.yaml
 
   deploy:
@@ -56,7 +56,7 @@ jobs:
       - name: download App Engine file
         uses: actions/download-artifact@v1
         with:
-          name: app_engine_file
+          name: app.yaml
 
       - name: login gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
