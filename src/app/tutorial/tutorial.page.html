@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="completeTutorial()"
+        >Skip tutorial</ion-button
+      ></ion-buttons
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-slides pager="true" class="tutorial-slides-container">
+    <ion-slide>
+      <h2 class="slide-title">
+        <b>Step 1</b>
+      </h2>
+      <img src="assets/images/placeholder-480x320.jpg" class="slide-image" />
+      <p>Step 1 text</p>
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title">
+        <b>Step 2</b>
+      </h2>
+      <img src="assets/images/placeholder-480x320.jpg" class="slide-image" />
+
+      <p>Step 2 text</p>
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title">
+        <b>Step 3</b>
+      </h2>
+      <img src="assets/images/placeholder-480x320.jpg" class="slide-image" />
+
+      <p>Step 3 text</p>
+
+      <ion-button
+        class="complete-button"
+        fill="clear"
+        (click)="completeTutorial()"
+      >
+        Complete tutorial
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide> </ion-slides
+></ion-content>
