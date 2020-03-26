@@ -9,13 +9,6 @@ import { Router } from '@angular/router';
 })
 export class TutorialPage {
   constructor(private storage: Storage, private router: Router) {}
-  ionViewWillEnter() {
-    this.storage.get('tutorial_complete').then(res => {
-      if (res === true) {
-        this.router.navigateByUrl('/home', { replaceUrl: true });
-      }
-    });
-  }
 
   completeTutorial() {
     this.router.navigateByUrl('/home').then(() => {
