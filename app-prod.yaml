@@ -1,0 +1,8 @@
+runtime: nodejs12
+application: coronapp-prod
+handlers:
+  - url: /
+    static_files: www/index.html
+    upload: www/index.html
+  - url: /
+    static_dir: www
