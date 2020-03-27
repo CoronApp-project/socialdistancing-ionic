@@ -1,6 +1,4 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { IonicStorageModule } from '@ionic/storage';
 
 import { FeedService, AzureNewsApiResultItem } from './feed.service';
 
