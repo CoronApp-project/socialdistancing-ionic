@@ -5,6 +5,7 @@ on:
     branches:
       - feature/*
   pull_request:
+    types: [closed]
     branches:
       - master
       - develop
@@ -44,11 +45,11 @@ jobs:
         run: gcloud app deploy --version=dev --promote
 
       - name: deploy to prod
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/develop' && github.event.pull_request.merged
         run: gcloud app deploy --version=prod --promote
 
       - name: pull-request to master
-        if: github.ref == 'refs/heads/develop' && success()
+        if: github.ref == 'refs/heads/develop' && success() && github.event.pull_request.merged
         uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
