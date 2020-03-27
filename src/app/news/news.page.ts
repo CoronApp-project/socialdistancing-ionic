@@ -11,7 +11,7 @@ import { FeedService, AzureNewsApiResultItem } from './feed.service';
 export class NewsPage implements OnInit {
   constructor(private feedService: FeedService) {}
 
-  private articles: AzureNewsApiResultItem[];
+  public articles: AzureNewsApiResultItem[];
 
   private getMarketForLanguage(lang: string) {
     switch (lang.toLowerCase()) {
