@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "ionicBuildProd": "ionic build --prod",
     "startServe": "http-server -c-1 ./www",
-    "buildServer": "run-s ionicBuildProd startServe"
+    "buildServer": "run-s ionicBuildProd startServe",
+    "dev": "ionic serve --configuration dev --source-map"
   },
   "private": true,
   "dependencies": {
@@ -61,5 +62,8 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "prettier": {
+    "singleQuote": true
+  }
 }
