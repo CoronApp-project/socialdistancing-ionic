@@ -16,7 +16,8 @@
     "ionicBuildProd": "ionic build --prod",
     "startServe": "http-server -c-1 ./www",
     "buildServer": "run-s ionicBuildProd startServe",
-    "build:ci": "npm run clean && npm run test && npm run build:prod"
+    "build:ci": "npm run clean && npm run test && npm run build:prod",
+     "dev": "ionic serve --configuration dev --source-map"
   },
   "resolutions": {
     "@babel/preset-env": "7.9.0"
@@ -70,5 +71,8 @@
     "@babel/preset-env": "7.8.0",
     "babel-loader": "8.1.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "prettier": {
+    "singleQuote": true
+  }
 }

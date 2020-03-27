@@ -70,6 +70,13 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
+            "dev": {
+              "optimization": false,
+              "aot": false,
+              "serviceWorker": false,
+              "sourceMap": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
             "ci": {
               "watch": false,
               "progress": false,
@@ -85,6 +92,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "dev": {
+              "browserTarget": "app:build:dev"
             },
             "ci": {
               "progress": false
@@ -175,6 +185,10 @@
             "production": {
               "cordovaBuildTarget": "app:ionic-cordova-build:production",
               "devServerTarget": "app:serve:production"
+            },
+            "dev": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:dev",
+              "devServerTarget": "app:serve:dev"
             }
           }
         }
