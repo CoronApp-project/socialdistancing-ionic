@@ -136,4 +136,7 @@ In the case of this example the port number would be 8080. After running this co
 
 ![ngrok output after running the ngrok http command line](https://user-images.githubusercontent.com/58298921/77493669-02add680-6e44-11ea-9cfa-aeb7563807b6.png)
 
-To properly test the application, take the last fowarwding url that starts with 'https' and open it in your mobile browser
+To properly test the application, take the last fowarwding url that starts with 'https' and open it in your mobile browser.
+
+# Deployment to test and production environments
+Commits to `develop` will automatically be deployed to the test environment at https://dev-dot-acn-liquid-studio-nl.appspot.com/. Commits to the `master` branch will automatically deploy to production: https://acn-liquid-studio-nl.appspot.com/.
