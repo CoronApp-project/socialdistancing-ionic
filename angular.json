@@ -30,6 +30,11 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
+              {
+                "glob": "**/*",
+                "input": "src/ar",
+                "output": "ar"
+              },
               "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
@@ -144,7 +149,9 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
