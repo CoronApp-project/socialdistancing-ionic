@@ -83,7 +83,9 @@
               "ngswConfigPath": "ngsw-config.json"
             },
             "ci": {
-              "progress": false
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCustom"
             }
           }
         },

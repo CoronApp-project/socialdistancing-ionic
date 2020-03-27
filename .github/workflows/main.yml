@@ -1,0 +1,55 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - feature/*
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+      - develop
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: setup node
+        uses: actions/setup-node@v1
+
+      - name: npm ci & npm run build
+        run: |
+          npm ci
+          npm run build:ci
+
+      - name: login gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "286.0.0"
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: deploy to dev
+        run: gcloud app deploy --version=dev --promote
+
+      - name: deploy to prod
+        if: github.ref == 'refs/heads/develop' && github.event.pull_request.merged
+        run: gcloud app deploy --version=prod --promote
+
+      - name: pull-request to master
+        if: github.ref == 'refs/heads/develop' && success() && github.event.pull_request.merged
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
