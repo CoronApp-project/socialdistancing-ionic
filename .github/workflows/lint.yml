@@ -5,12 +5,12 @@ name: Lint
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ "feature/*" ]
   pull_request:
     branches: [ master, develop ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
