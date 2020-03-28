@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - feature/*
+  pull_request:
+    types: [closed]
+    branches:
+      - master
       - develop
 
 jobs:
@@ -32,7 +36,7 @@ jobs:
       - name: login gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '286.0.0'
+          version: "286.0.0"
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
