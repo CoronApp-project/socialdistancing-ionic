@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let article of articles" (click)="openUrl(article)">
+    <img
+      *ngIf="article.image && article.image.contentUrl"
+      src="{{article.image.contentUrl}}"
+    />
+    <img
+      *ngIf="article.image && !article.image.contentUrl && article.image.thumbnail.contentUrl"
+      src="{{article.image.thumbnail.contentUrl}}"
+    />
+    <ion-card-header>
+      <ion-card-subtitle *ngIf="article.provider.length > 0">
+        {{article.provider[0].name}}
+      </ion-card-subtitle>
+      <ion-card-title>{{article.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{article.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
