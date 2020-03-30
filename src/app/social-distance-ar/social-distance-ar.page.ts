@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// require('aframe');
-// require('aframe-look-at-component');
+import { SocialDistanceService } from './social-distance.service';
 
 @Component({
   selector: 'app-social-distance-ar',
@@ -9,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-distance-ar.page.scss']
 })
 export class SocialDistanceArPage implements OnInit {
-  constructor() {}
+  constructor(private socialDistanceService: SocialDistanceService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.addEventListener('circle-ready-event', () => {
+      this.socialDistanceService.initializeCircle();
+    });
+  }
 }
