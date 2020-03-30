@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        size="large"
+        tabindex="0"
+        color="primary"
+        (click)="navigateBack()"
+        >Back</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item lines="none"> <h3>Circle color</h3></ion-item>
+      <ion-item>
+        <ion-button size="small" (click)="showPicker()">
+          Pick a circle color
+        </ion-button></ion-item
+      >
+    </ion-item-group>
+  </ion-list>
+</ion-content>

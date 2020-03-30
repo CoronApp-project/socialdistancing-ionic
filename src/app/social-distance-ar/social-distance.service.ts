@@ -6,7 +6,6 @@ import { Storage } from '@ionic/storage';
 })
 export class SocialDistanceService {
   constructor(private storage: Storage) {}
-
   STORAGE_KEY = 'circle-key';
 
   async initializeCircle() {
@@ -21,7 +20,6 @@ export class SocialDistanceService {
   }
 
   dispatchCircleEvent(_optionDetails) {
-    console.log('Dispatching the event ');
     let _arFrame = document.querySelector('iframe');
     let _customEvent = new CustomEvent('circle-adjust-event', {
       detail: _optionDetails
@@ -57,7 +55,9 @@ export class SocialDistanceService {
     } else {
       await this.storage.set(this.STORAGE_KEY, _newOptionsList);
     }
+    await this.initializeCircle();
   }
+
   async setUserHeight(_heightValue) {
     let _optionValue = { name: 'position', value: `0 ${_heightValue} 0` };
     let _oldOptionsList = await this.getCircleoptions();
@@ -76,8 +76,13 @@ export class SocialDistanceService {
     await this.setOptionValue(_oldOptionsList, _optionValue);
   }
 
-  async setCircleColor(_circleColor) {
+  async setCircleColor(_circleColor: string) {
+    _circleColor =
+      _circleColor[0].toLowerCase() +
+      _circleColor.slice(1, _circleColor.length);
+    console.log(_circleColor);
     let _optionValue = { name: 'color', value: `${_circleColor}` };
+    console.log(_optionValue);
     let _oldOptionsList = await this.getCircleoptions();
     await this.setOptionValue(_oldOptionsList, _optionValue);
   }

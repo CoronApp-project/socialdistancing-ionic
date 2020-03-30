@@ -14,11 +14,21 @@ const routes: Routes = [
   {
     path: 'news',
     loadChildren: () => import('./news/news.module').then(m => m.NewsPageModule)
-  },  {
+  },
+  {
     path: 'social-distance-ar',
-    loadChildren: () => import('./social-distance-ar/social-distance-ar.module').then( m => m.SocialDistanceArPageModule)
+    loadChildren: () =>
+      import('./social-distance-ar/social-distance-ar.module').then(
+        m => m.SocialDistanceArPageModule
+      )
+  },
+  {
+    path: 'ar-settings',
+    loadChildren: () =>
+      import(
+        './social-distancing-settings/social-distancing-settings.module'
+      ).then(m => m.SocialDistancingSettingsPageModule)
   }
-
 ];
 
 @NgModule({
