@@ -1,5 +1,7 @@
 {
   "name": "socialdistancing-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

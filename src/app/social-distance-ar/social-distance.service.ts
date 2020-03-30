@@ -19,6 +19,16 @@ export class SocialDistanceService {
     this.dispatchCircleEvent(_optionDetails);
   }
 
+  updateCircleLocation(_geoPosition) {
+    let lat = _geoPosition.coords.latitude;
+    let lon = _geoPosition.coords.longitude;
+
+    let _optionValue = {
+      'gps-entity-place': `latitude: ${lat}; longitude: ${lon}`
+    };
+    console.log(_optionValue);
+    this.dispatchCircleEvent(_optionValue);
+  }
   dispatchCircleEvent(_optionDetails) {
     let _arFrame = document.querySelector('iframe');
     let _customEvent = new CustomEvent('circle-adjust-event', {
@@ -26,6 +36,7 @@ export class SocialDistanceService {
     });
     _arFrame.contentWindow.dispatchEvent(_customEvent);
   }
+
   async getCircleoptions() {
     return this.storage.get(this.STORAGE_KEY);
   }
