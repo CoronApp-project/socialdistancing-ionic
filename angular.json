@@ -30,6 +30,11 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
+              {
+                "glob": "**/*",
+                "input": "src/ar",
+                "output": "ar"
+              },
               "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
@@ -70,8 +75,17 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
+            "dev": {
+              "optimization": false,
+              "aot": false,
+              "serviceWorker": false,
+              "sourceMap": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
             "ci": {
-              "progress": false
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCustom"
             }
           }
         },
@@ -83,6 +97,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "dev": {
+              "browserTarget": "app:build:dev"
             },
             "ci": {
               "progress": false
@@ -134,7 +151,9 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -173,6 +192,10 @@
             "production": {
               "cordovaBuildTarget": "app:ionic-cordova-build:production",
               "devServerTarget": "app:serve:production"
+            },
+            "dev": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:dev",
+              "devServerTarget": "app:serve:dev"
             }
           }
         }
